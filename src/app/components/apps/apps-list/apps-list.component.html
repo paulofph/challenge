@@ -3,7 +3,7 @@
 </header>
 
 <ul>
-  <li *ngFor="let app of apps; let i = index">
+  <li *ngFor="let app of apps | paginate: { itemsPerPage: pageSize, currentPage: page }">
     <div class="app-item">
       <div class="box-info">
         <div class="box-info--content">
@@ -28,9 +28,10 @@
   </li>
 </ul>
 <ul class="pagination">
-  <li><a href="#">&lt;</a></li>
-  <li><a href="#">1</a></li>
-  <li class="active"><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">&gt;</a></li>
+  <pagination-controls 
+    (pageChange)="page = $event"
+    previousLabel=""
+    nextLabel=""
+  >
+  </pagination-controls>
 </ul>

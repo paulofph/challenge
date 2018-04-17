@@ -8,6 +8,9 @@ import { App } from '../../../models/app.model';
 })
 export class AppsListComponent implements OnInit {
   @Input() apps: App[];
+  
+  private page: number = 1;
+  private pageSize: number = 3;
 
   constructor() { }
 
