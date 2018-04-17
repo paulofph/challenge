@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs/Observable";
 import { map } from 'rxjs/operators'
+import { App } from "../models/app.model";
 
 @Injectable()
 export class AppsService {
@@ -14,7 +15,7 @@ export class AppsService {
     const filePath = './../assets/apps.json';
     return this.http.get(filePath)
                     .pipe(
-                      map((x:any) => x as any)
+                      map((app:any) => app as App)
                     )
   }
 

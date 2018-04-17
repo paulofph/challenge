@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 //Services
 import { AppsService } from "../../services/apps.service";
+import { App } from "../../models/app.model";
 
 @Component({
   selector: 'app-apps-list',
@@ -10,7 +11,7 @@ import { AppsService } from "../../services/apps.service";
 })
 export class AppsListComponent implements OnInit {
   
-  private apps: any;
+  private apps: App[];
 
   constructor(
     private appsService: AppsService

@@ -18,16 +18,18 @@
         </header>
 
         <ul>
-          <li>
+          <li *ngFor="let app of apps; let i = index">
             <div class="app-item">
               <div class="box-info">
                 <div class="box-info--content">
                   <div class="description">
-                    <h1>Voice Report</h1>
-                    <p>Calls reporting and analytics of your calls.</p>
+                    <h1>{{app.name}}</h1>
+                    <p>{{app.description}}</p>
                   </div>
                   <div class="tags">
-                    <span>Voice Analytics</span> / <span>Reporting</span> / <span>Optimization</span>
+                    <span *ngFor="let categorie of app.categories; let j = index"> 
+                      {{categorie}} <span *ngIf="j != (app.categories.legth)">/</span>
+                    </span>
                   </div>
                 </div>
                 <div class="box-info--footer">
