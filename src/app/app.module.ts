@@ -5,19 +5,21 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 //Components
 import { AppComponent } from './app.component';
-import { AppsListComponent } from './components/apps-list/apps-list.component';
+import { AppsListComponent } from './components/apps/apps-list/apps-list.component';
 
 //Services
 import { AppsService } from "./services/apps.service";
+import { AppsComponent } from './components/apps/apps.component';
 
 const appRoutes: Routes = [
-  { path: '', component: AppsListComponent }
+  { path: '', component: AppsComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppsListComponent
+    AppsListComponent,
+    AppsComponent
   ],
   imports: [
     RouterModule.forRoot(

@@ -1,0 +1,36 @@
+<header>
+  <input type="text" placeholder="Search by App">
+</header>
+
+<ul>
+  <li *ngFor="let app of apps; let i = index">
+    <div class="app-item">
+      <div class="box-info">
+        <div class="box-info--content">
+          <div class="description">
+            <h1>{{app.name}}</h1>
+            <p>{{app.description}}</p>
+          </div>
+          <div class="tags">
+            <span *ngFor="let categorie of app.categories; let j = index"> 
+              {{categorie}} <span *ngIf="!isLastElementOfArray(j, app.categories.length)">/</span>
+            </span>
+          </div>
+        </div>
+        <div class="box-info--footer">
+          <ul>                    
+            <li><span>Trial</span> <h3>Free<sup></sup></h3></li>
+            <li><span>Professional</span> <h3>35.00<sup>€</sup></h3></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+<ul class="pagination">
+  <li><a href="#">&lt;</a></li>
+  <li><a href="#">1</a></li>
+  <li class="active"><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">&gt;</a></li>
+</ul>
