@@ -1,9 +1,9 @@
 <header>
-  <input type="text" placeholder="Search by App">
+  <input type="text" placeholder="Search by App" [(ngModel)]="searchText">
 </header>
 
 <ul>
-  <li *ngFor="let app of apps | paginate: { itemsPerPage: pageSize, currentPage: page }">
+  <li *ngFor="let app of apps | paginate: { itemsPerPage: pageSize, currentPage: page } | filter: searchText">
     <div class="app-item">
       <div class="box-info">
         <div class="box-info--content">

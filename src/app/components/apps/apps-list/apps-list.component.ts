@@ -11,6 +11,7 @@ export class AppsListComponent implements OnInit {
   
   private page: number = 1;
   private pageSize: number = 3;
+  private searchText: string; 
 
   constructor() { }
 

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 //Components
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { AppsListComponent } from './components/apps/apps-list/apps-list.compone
 //Services
 import { AppsService } from "./services/apps.service";
 import { AppsComponent } from './components/apps/apps.component';
+import { FilterPipe } from './_shared/ui/filter.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: AppsComponent }
@@ -20,7 +22,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     AppsListComponent,
-    AppsComponent
+    AppsComponent,
+    FilterPipe
   ],
   imports: [
     RouterModule.forRoot(
@@ -29,7 +32,8 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [
     HttpClientModule,
