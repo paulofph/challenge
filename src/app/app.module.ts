@@ -13,6 +13,7 @@ import { AppsListComponent } from './components/apps/apps-list/apps-list.compone
 import { AppsService } from "./services/apps.service";
 import { AppsComponent } from './components/apps/apps.component';
 import { FilterPipe } from './_shared/ui/filter.pipe';
+import { CategoriesListComponent } from './components/apps/categories-list/categories-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: AppsComponent }
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     AppsListComponent,
     AppsComponent,
-    FilterPipe
+    FilterPipe,
+    CategoriesListComponent
   ],
   imports: [
     RouterModule.forRoot(
