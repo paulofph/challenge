@@ -91,11 +91,11 @@ input:hover, input:focus {
   border: 1px solid var(--teal);
 }
 
-.nav-menu .active a {
-  color: var(--teal);
+.nav-menu .active .option {
+  color: var(--teal) !important; 
 }
 
-.nav-menu a {
+.nav-menu .option {
   position: relative;
   display: block;
   padding: 1rem;
@@ -109,7 +109,7 @@ input:hover, input:focus {
   transition: all 0.3s ease;
 }
 
-.nav-menu a:hover {
+.nav-menu .option:hover {
   background-color: var(--white);
   -webkit-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;

@@ -12,8 +12,10 @@ import { AppsListComponent } from './components/apps/apps-list/apps-list.compone
 //Services
 import { AppsService } from "./services/apps.service";
 import { AppsComponent } from './components/apps/apps.component';
-import { FilterPipe } from './_shared/ui/filter.pipe';
+import { FilterPipe } from './_shared/ui/pipes/filter/filter.pipe';
 import { CategoriesListComponent } from './components/apps/categories-list/categories-list.component';
+import { PricePipe } from './_shared/ui/pipes/price/price.pipe';
+import { CategoryPipe } from './_shared/ui/pipes/category/category.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: AppsComponent }
@@ -25,7 +27,9 @@ const appRoutes: Routes = [
     AppsListComponent,
     AppsComponent,
     FilterPipe,
-    CategoriesListComponent
+    CategoriesListComponent,
+    PricePipe,
+    CategoryPipe
   ],
   imports: [
     RouterModule.forRoot(

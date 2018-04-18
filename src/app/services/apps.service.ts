@@ -14,9 +14,6 @@ export class AppsService {
   public getApps(): Observable<any> {
     const filePath = './../assets/apps.json';
     return this.http.get(filePath)
-                    .pipe(
-                      map((app:any) => app as App)
-                    )
   }
 
 }

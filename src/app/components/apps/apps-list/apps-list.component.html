@@ -3,7 +3,10 @@
 </header>
 
 <ul>
-  <li *ngFor="let app of apps | paginate: { itemsPerPage: pageSize, currentPage: page } | filter: searchText">
+  <li *ngFor="let app of apps 
+              | category: selectedCategory
+              | filter: searchText 
+              | paginate: { itemsPerPage: pageSize, currentPage: page }">
     <div class="app-item">
       <div class="box-info">
         <div class="box-info--content">
@@ -18,9 +21,11 @@
           </div>
         </div>
         <div class="box-info--footer">
-          <ul>                    
-            <li><span>Trial</span> <h3>Free<sup></sup></h3></li>
-            <li><span>Professional</span> <h3>35.00<sup>€</sup></h3></li>
+          <ul >                    
+            <li *ngFor="let subscription of app.subscriptions;">
+              <span>{{ subscription.name }}</span> 
+              <h3>{{ subscription.price | price }}<sup *ngIf="subscription.price != 0">€</sup></h3>
+            </li>
           </ul>
         </div>
       </div>

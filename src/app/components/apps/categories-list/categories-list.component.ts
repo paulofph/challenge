@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-categories-list',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesListComponent implements OnInit {
 
+  @Input() categories: string[];
+  private selectedCategory: string;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  private selectCategory(selectedCategory: string){
+    this.selectedCategory = selectedCategory;
   }
 
 }

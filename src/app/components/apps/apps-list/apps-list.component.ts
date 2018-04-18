@@ -8,6 +8,7 @@ import { App } from '../../../models/app.model';
 })
 export class AppsListComponent implements OnInit {
   @Input() apps: App[];
+  @Input() selectedCategory: string;
   
   private page: number = 1;
   private pageSize: number = 3;
