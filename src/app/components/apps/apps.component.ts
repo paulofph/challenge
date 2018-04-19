@@ -12,7 +12,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class AppsComponent implements OnInit {
 
-  private apps: App[];
+  private apps: App[] = [];
   private categories: string[]; //Category 'All' - Shows products from all categories
   private selectedCategory: string = "All";
   @ViewChild(CategoriesListComponent) categoriesListComponent: CategoriesListComponent; 
@@ -23,12 +23,15 @@ export class AppsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-      this.getApps(); 
+    this.getApps(); 
   }
 
   private getApps(){
     this.appsService.getApps().subscribe((data:App[]) => {
-      this.apps = data;
+      data.map(app => {
+        this.apps.push(new App(app));
+      });
+      console.log(this.apps);
       this.getAllCategories();
     });
   }
