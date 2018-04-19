@@ -91,10 +91,6 @@ input:hover, input:focus {
   border: 1px solid var(--teal);
 }
 
-.nav-menu .active .option {
-  color: var(--teal) !important; 
-}
-
 .nav-menu .option {
   position: relative;
   display: block;
@@ -113,6 +109,10 @@ input:hover, input:focus {
   background-color: var(--white);
   -webkit-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
+}
+
+.active {
+  color: var(--teal) !important;
 }
 
 .app-item {

@@ -5,7 +5,7 @@
 <ul>
   <li *ngFor="let app of apps 
               | category: selectedCategory
-              | filter: searchText 
+              | search: searchText 
               | paginate: { itemsPerPage: pageSize, currentPage: page }">
     <div class="app-item">
       <div class="box-info">

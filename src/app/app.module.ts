@@ -12,7 +12,7 @@ import { AppsListComponent } from './components/apps/apps-list/apps-list.compone
 //Services
 import { AppsService } from "./services/apps.service";
 import { AppsComponent } from './components/apps/apps.component';
-import { FilterPipe } from './_shared/ui/pipes/filter/filter.pipe';
+import { SearchPipe } from './_shared/ui/pipes/search/search.pipe';
 import { CategoriesListComponent } from './components/apps/categories-list/categories-list.component';
 import { PricePipe } from './_shared/ui/pipes/price/price.pipe';
 import { CategoryPipe } from './_shared/ui/pipes/category/category.pipe';
@@ -26,7 +26,7 @@ const appRoutes: Routes = [
     AppComponent,
     AppsListComponent,
     AppsComponent,
-    FilterPipe,
+    SearchPipe,
     CategoriesListComponent,
     PricePipe,
     CategoryPipe
@@ -39,7 +39,8 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    RouterTestingModule
   ],
   providers: [
     HttpClientModule,
