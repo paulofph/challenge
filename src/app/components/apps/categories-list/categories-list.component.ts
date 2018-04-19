@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import Utils from '../../../_shared/ui/utils';
+
 
 @Component({
   selector: 'app-categories-list',

@@ -13,8 +13,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class AppsComponent implements OnInit {
 
   private apps: App[];
-  private categories: string[];
-  private selectedCategory: string;
+  private categories: string[]; //Category 'All' - Shows products from all categories
+  private selectedCategory: string = "All";
   @ViewChild(CategoriesListComponent) categoriesListComponent: CategoriesListComponent; 
   
   constructor(
@@ -29,13 +29,14 @@ export class AppsComponent implements OnInit {
   private getApps(){
     this.appsService.getApps().subscribe((data:App[]) => {
       this.apps = data;
-      this.extractAllCategories();
+      this.getAllCategories();
     });
   }
 
-  private extractAllCategories(){
+  private getAllCategories(){
     let listsOfCategories = [];
     let listOfCategories = [];
+    let defaultCategory = 'All';
     
     // Gets arrays of categories from all apps
     this.apps.map( app => {
@@ -43,13 +44,13 @@ export class AppsComponent implements OnInit {
     });
     listOfCategories = this.intersectionOfArrays(listsOfCategories);
     this.categories = listOfCategories;
-    this.categories.push('All');
+    this.categories.push(defaultCategory);
+    this.categories.sort();
   }
 
   // intersects a list of arrays(strings)
   // returns an array of common strings
   private intersectionOfArrays(listOfArrays: string[][]): string[]{
-
     let intersectionArray = [];
   
     listOfArrays.map(array => {
