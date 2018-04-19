@@ -1,7 +1,13 @@
 export default class Utils {
 
-    static sortArrayOfStrings(array: string[]): string[]{
-        console.log("teste")
-        return null;
+    //Sort array of Objects by criteria
+    static sortArrayOfObjects(array: any[], criteria: string): any[]{
+        let sortedArray;
+
+        sortedArray = array.sort(function(a, b) {
+            return a.sumOfSubsPrices - b.sumOfSubsPrices;
+        });
+
+        return sortedArray;
     }
 }

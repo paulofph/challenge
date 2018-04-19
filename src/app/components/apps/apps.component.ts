@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppsService } from '../../services/apps.service';
 import { App } from '../../models/app.model';
-import { Category } from '../../models/category';
 import { CategoriesListComponent } from './categories-list/categories-list.component';
 import { ActivatedRoute, Params } from '@angular/router';
+import Utils from '../../_shared/ui/utils';
 
 @Component({
   selector: 'app-apps',
@@ -27,11 +27,12 @@ export class AppsComponent implements OnInit {
   }
 
   private getApps(){
+    let sortingCriteria = 'sumOfSubsPrices'
     this.appsService.getApps().subscribe((data:App[]) => {
       data.map(app => {
         this.apps.push(new App(app));
       });
-      console.log(this.apps);
+      this.apps = Utils.sortArrayOfObjects(this.apps, sortingCriteria)
       this.getAllCategories();
     });
   }
@@ -62,7 +63,6 @@ export class AppsComponent implements OnInit {
           return intersectionArray.push(item);
       });
     });
-
     return intersectionArray
   }
 }
