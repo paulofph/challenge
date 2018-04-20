@@ -39,8 +39,7 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule,
-    RouterTestingModule
+    FormsModule
   ],
   providers: [
     HttpClientModule,
