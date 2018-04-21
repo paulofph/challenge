@@ -23,4 +23,11 @@ describe('CategoriesListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('select category', () => {
+    const selectedCategory = 'testCategory';
+    component.selectCategory(selectedCategory);
+    
+    expect(selectedCategory).toBe(selectedCategory);
+  })
 });

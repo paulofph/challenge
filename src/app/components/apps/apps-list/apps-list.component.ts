@@ -18,7 +18,7 @@ export class AppsListComponent implements OnInit {
 
   ngOnInit() {}
 
-  private isLastElementOfArray(index: number, arrayLength: number){
+  public isLastElementOfArray(index: number, arrayLength: number){
     // check if is the index of last element of the array
     if(index == (arrayLength-1))
       return true;

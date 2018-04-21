@@ -16,7 +16,7 @@ export class CategoriesListComponent implements OnInit {
 
   ngOnInit() {}
 
-  private selectCategory(selectedCategory: string){
+  public selectCategory(selectedCategory: string){
     this.selectedCategory = selectedCategory;
   }
 

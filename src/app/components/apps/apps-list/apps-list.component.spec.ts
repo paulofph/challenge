@@ -60,4 +60,12 @@ describe('AppsListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('test is isLastElementOfArray method returning true', () => {
+    expect(component.isLastElementOfArray(2,3)).toBe(true)
+  });
+
+  it('test is isLastElementOfArray method returning false', () => {
+    expect(component.isLastElementOfArray(2,4)).toBe(false)
+  });
 });

@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppsService } from '../../services/apps.service';
 import { App } from '../../models/app.model';
 import { CategoriesListComponent } from './categories-list/categories-list.component';
-import { ActivatedRoute, Params } from '@angular/router';
 import Utils from '../../_shared/ui/utils';
 
 @Component({
@@ -18,8 +17,7 @@ export class AppsComponent implements OnInit {
   @ViewChild(CategoriesListComponent) categoriesListComponent: CategoriesListComponent; 
   
   constructor(
-    private appsService: AppsService,
-    private activatedRoute: ActivatedRoute,
+    private appsService: AppsService
   ) { }
 
   ngOnInit() {
