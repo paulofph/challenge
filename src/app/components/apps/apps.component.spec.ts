@@ -19,18 +19,8 @@ describe('AppsComponent', () => {
 
     selectedCategory = jasmine.createSpy('selectedCategory').and
   }
-
-  @Component({selector: 'app-apps-list', template: ''})
-  class AppsListStubComponent {
-    @Input('apps')
-    public app: App;
-
-    @Input('selectedCategory')
-    public selectedCategory: string;
-   }
-
    const selectedCategory: string = 'All';
-
+   const AppsServiceSpy = jasmine.createSpyObj('AppsService', ['getApps']);
    const appsArray: App[] = [
     {
       id: "1",
@@ -49,13 +39,18 @@ describe('AppsComponent', () => {
       sumOfSubsPrices: 1
     }
   ];
- 
 
-  const AppsServiceSpy = jasmine.createSpyObj('AppsService', ['getApps']);
+  @Component({selector: 'app-apps-list', template: ''})
+  class AppsListStubComponent {
+    @Input('apps')
+    public app: App;
+
+    @Input('selectedCategory')
+    public selectedCategory: string;
+   }
+ 
 
   beforeEach(async(() => {
- 
-
     TestBed.configureTestingModule({
       declarations: [ 
         AppsComponent,
@@ -80,7 +75,7 @@ describe('AppsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('get all categories returns correctly',() => {
+  it('getAllCategories returns correctly',() => {
     component.getAllCategories();
     expect(component.categories.length).toBe(4);
   });

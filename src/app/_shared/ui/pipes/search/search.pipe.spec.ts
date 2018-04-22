@@ -27,11 +27,11 @@ describe('SearchPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('filters apps by name with search text app1', () => {
+  it("filters apps by name with search text 'app1'", () => {
     expect(pipe.transform(appsArray, 'app1').length).toBe(1);
   });
 
-  it('filters apps by name with search text app', () => {
+  it("filters apps by name with search text 'app'", () => {
     expect(pipe.transform(appsArray, 'app').length).toBe(2);
   });
 

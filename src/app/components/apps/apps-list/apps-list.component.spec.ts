@@ -6,6 +6,7 @@ import {Pipe, PipeTransform, Component} from '@angular/core';
 describe('AppsListComponent', () => {
   let component: AppsListComponent;
   let fixture: ComponentFixture<AppsListComponent>;
+
   @Pipe({name: 'paginate'})
   class PaginatePipe implements PipeTransform {
       transform(value: any): any {
@@ -61,11 +62,11 @@ describe('AppsListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('test is isLastElementOfArray method returning true', () => {
+  it('isLastElementOfArray method returning true', () => {
     expect(component.isLastElementOfArray(2,3)).toBe(true)
   });
 
-  it('test is isLastElementOfArray method returning false', () => {
+  it('isLastElementOfArray method returning false', () => {
     expect(component.isLastElementOfArray(2,4)).toBe(false)
   });
 });

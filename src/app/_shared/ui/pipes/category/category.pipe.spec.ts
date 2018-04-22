@@ -28,11 +28,11 @@ describe('CategoryPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('filters apps by category Channels', () => {
+  it("filters apps by category 'Channels'", () => {
     expect(pipe.transform(appsArray, 'Channels').length).toBe(1);
   });
 
-  it('filters apps by category All', () => {
+  it("filters apps by category 'All'", () => {
     expect(pipe.transform(appsArray, 'All').length).toBe(2);
   });
 

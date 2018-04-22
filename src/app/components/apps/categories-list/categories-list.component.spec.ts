@@ -24,7 +24,7 @@ describe('CategoriesListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('select category', () => {
+  it('selectCategory sets selected category', () => {
     const selectedCategory = 'testCategory';
     component.selectCategory(selectedCategory);
     
