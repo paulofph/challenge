@@ -1,12 +1,13 @@
 <div class="flex-container">
   <nav class="nav-categories">
-    <app-categories-list [categories]="categories"        
+    <app-categories-list [categories]="categories"
+                         (selectCategoryEvent)="selectCategory($event)"        
     ></app-categories-list>
   </nav>
   
   <section class="apps-list">
     <app-apps-list [apps]="apps"
-                   [selectedCategory]="categoriesListComponent.selectedCategory"
+                   [selectedCategory]="selectedCategory"
                    ></app-apps-list>
   </section>
   </div>

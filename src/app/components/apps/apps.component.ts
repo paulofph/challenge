@@ -11,9 +11,9 @@ import Utils from '../../_shared/ui/utils';
 })
 export class AppsComponent implements OnInit {
 
-  private apps: App[] = [];
-  private categories: string[]; //Category 'All' - Shows products from all categories
-  private selectedCategory: string = "All";
+  public apps: App[] = [];
+  public categories: string[]; //Category 'All' - Shows products from all categories
+  public selectedCategory: string = "All";
   @ViewChild(CategoriesListComponent) categoriesListComponent: CategoriesListComponent; 
   
   constructor(
@@ -24,8 +24,8 @@ export class AppsComponent implements OnInit {
     this.getApps(); 
   }
 
-  private getApps(){
-    let sortingCriteria = 'sumOfSubsPrices'
+  public getApps(){
+    let sortingCriteria = 'sumOfSubsPrices';
     this.appsService.getApps().subscribe((data:App[]) => {
       data.map(app => {
         this.apps.push(new App(app));
@@ -35,7 +35,7 @@ export class AppsComponent implements OnInit {
     });
   }
 
-  private getAllCategories(){
+  public getAllCategories(){
     let listsOfCategories = [];
     let listOfCategories = [];
     let defaultCategory = 'All';
@@ -52,7 +52,7 @@ export class AppsComponent implements OnInit {
 
   // intersects a list of arrays(strings)
   // returns an array of common strings
-  private intersectionOfArrays(listOfArrays: string[][]): string[]{
+  public intersectionOfArrays(listOfArrays: string[][]): string[]{
     let intersectionArray = [];
   
     listOfArrays.map(array => {
@@ -62,5 +62,9 @@ export class AppsComponent implements OnInit {
       });
     });
     return intersectionArray
+  }
+
+  private selectCategory(selectedCategory: string){
+    this.selectedCategory = selectedCategory;
   }
 }

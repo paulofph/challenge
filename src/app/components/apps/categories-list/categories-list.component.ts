@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import Utils from '../../../_shared/ui/utils';
 
 @Component({
@@ -10,6 +10,7 @@ import Utils from '../../../_shared/ui/utils';
 export class CategoriesListComponent implements OnInit {
 
   @Input() categories: string[];
+  @Output() selectCategoryEvent = new EventEmitter();
   private selectedCategory: string;
 
   constructor() { }
@@ -18,6 +19,7 @@ export class CategoriesListComponent implements OnInit {
 
   public selectCategory(selectedCategory: string){
     this.selectedCategory = selectedCategory;
+    this.selectCategoryEvent.emit(this.selectedCategory);
   }
 
 }
